@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li style="">5</li>
+		</ul>
+		<ul class="ul1">
+			<li>1</li>
+			<li></li>
+			<li>3</li>
+			<li>4</li>
+			<li style="display: none;">5</li>
+		</ul>
+	</body>
+</html>
+<script type="text/javascript" src="js/jquery-2.1.0.js" ></script>
+<script type="text/javascript">
+	$("li:first-child").css({
+		color:'green'
+	})
+	
+	$("li:last-child").css({
+		color:'red'
+	})
+	
+	$("li:nth-child(3)").css({
+		color:'yellow'
+	})
+	//查找不可见元素
+	$(":hidden")
+	
+	$("li:empty").css({
+		background:'#ff2d52'
+	})
+	
+	$("li:parent").css({
+		background:'green'
+	})
+</script>

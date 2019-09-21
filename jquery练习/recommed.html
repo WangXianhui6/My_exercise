@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.list-text{
+				width: 400px;
+				min-height: 50px;
+				border: 1px solid #ffcc88;
+				background: #f7f7f7;;
+				margin-bottom: 10px;
+				padding: 10px;
+				font-size: 14px;
+				color: burlywood;
+			}
+			[name=content]{
+				width: 200px;
+				height: 30px;
+				border-radius: 5px;
+				vertical-align: top;
+				border: 1px solid #98fb98;
+			}
+			.send{
+				display: inline-block;
+				height: 30px;
+				line-height: 30px;
+				border: 1px solid #98FB98;
+				border-radius:5px;
+				font-size: 12px;
+				padding: 0 10px;
+				cursor:pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="main">
+			<div class="list-text"></div>
+		</div>
+		
+		<div class="info">
+			<span class="name">张三：</span>
+			<textarea name="content"></textarea>
+			<a class="send">提交</a>
+		</div>
+	</body>
+</html>
+<script type="text/javascript" src="js/jquery-2.1.0.js" ></script>
+<script type="text/javascript">
+	var send=$(".send");
+	send.click(function(){
+	var value = $("[name=content]").val();
+	if(value){
+		if(confirm('是否提交评论')){
+//			var html=`<div>张三:${value}</div>`
+//			
+//			$(html).prependTo($('.list-text'));
+     var html=`<div class="list-text">张三:${value}</div>`
+     $(".main").prepend(html)
+			$("[name=content]").val('');
+		}
+	}
+	})
+</script>
